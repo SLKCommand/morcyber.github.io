@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - MOR CYBER | HIPAA, FTC, SOC 2 Compliance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Jura:wght@300;400;500;600;700&family=Sofia+Sans+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Jura:wght@300;400;500;600;700&family=Sofia+Sans+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-white: #FFFFFF;
+            --primary-black: #000000;
+            --primary-gray: #7D7D7D;
+            --accent-red: #FD6262;
+            --accent-blue: #00AEFF;
+            --dark-bg: #1B1C1E;
+            --font-title: 'Jura', sans-serif;
+            --font-body: 'Montserrat', sans-serif;
+            --font-tagline: 'Sofia Sans Condensed', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            color: var(--dark-bg);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-title);
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(27, 28, 30, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: var(--primary-white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--accent-blue);
+        }
+        
+        .btn-nav {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #0066cc 100%);
+            padding: 12px 30px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,174,255,0.3);
+        }
+        
+        /* Hero */
+        .services-hero {
+            background: linear-gradient(135deg, #0a0a0a 0%, var(--dark-bg) 100%);
+            padding: 140px 40px 80px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .services-hero h1 {
+            font-size: 64px;
+            font-weight: 700;
+            color: var(--primary-white);
+            margin-bottom: 20px;
+        }
+        
+        .services-hero p {
+            font-size: 22px;
+            color: #b0b0b0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Service Detail Sections */
+        .service-detail {
+            padding: 100px 40px;
+        }
+        
+        .service-detail:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .service-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+        
+        .service-info h2 {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin-bottom: 25px;
+        }
+        
+        .service-info .lead {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--dark-bg);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .service-info h3 {
+            font-size: 26px;
+            color: var(--dark-bg);
+            margin: 40px 0 20px;
+            font-weight: 700;
+        }
+        
+        .service-info ul {
+            list-style: none;
+            margin: 25px 0;
+        }
+        
+        .service-info ul li {
+            padding: 12px 0 12px 35px;
+            position: relative;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        .service-info ul li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        .service-info ul li strong {
+            color: var(--dark-bg);
+            font-weight: 700;
+        }
+        
+        /* Pricing Box */
+        .pricing-box {
+            background: var(--primary-white);
+            border: 3px solid var(--accent-blue);
+            border-radius: 16px;
+            padding: 40px;
+            position: sticky;
+            top: 120px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+        
+        .pricing-box h3 {
+            font-size: 28px;
+            color: var(--accent-blue);
+            margin-bottom: 30px;
+            font-weight: 800;
+        }
+        
+        .pricing-tier {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .pricing-tier:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .tier-name {
+            font-family: var(--font-title);
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--dark-bg);
+            margin-bottom: 10px;
+        }
+        
+        .tier-price {
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--accent-blue);
+            margin-bottom: 10px;
+        }
+        
+        .tier-desc {
+            font-size: 14px;
+            color: var(--primary-gray);
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 16px 35px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin-top: 30px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-red) 0%, #e55555 100%);
+            color: var(--primary-white);
+            box-shadow: 0 6px 25px rgba(253,98,98,0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(253,98,98,0.6);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #0066cc 100%);
+            padding: 100px 40px;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 56px;
+            font-weight: 900;
+            color: var(--primary-white);
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 22px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn-cta {
+            background: var(--accent-red);
+            color: var(--primary-white);
+            padding: 22px 50px;
+            font-size: 18px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        
+        .btn-cta:hover {
+            background: #e55555;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+        }
+        
+        /* Footer */
+        .footer {
+            background: #0a0a0a;
+            color: var(--primary-white);
+            padding: 80px 40px 30px;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col h4 {
+            font-family: var(--font-title);
+            color: var(--accent-blue);
+            margin-bottom: 25px;
+            font-size: 18px;
+            font-weight: 800;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-col a {
+            color: #999;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 15px;
+        }
+        
+        .footer-col a:hover {
+            color: var(--accent-blue);
+        }
+        
+        .footer-col p {
+            color: #888;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .footer-bottom p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 1200px) {
+            .service-content {
+                grid-template-columns: 1fr;
+            }
+            .pricing-box {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .services-hero h1 { font-size: 42px; }
+            .nav-menu { display: none; }
+            .footer-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" style="text-decoration: none;">
+                <img src="MOR_Cyber_logo_.svg" alt="MOR CYBER" style="height: 50px; width: auto;">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="why-morcyber.html">Why MorCyber</a></li>
+                <li><a href="get-started.html" class="btn-nav">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="services-hero">
+        <h1>Our Services</h1>
+        <p>Complete cybersecurity and compliance programs for healthcare, financial services, and technology companies</p>
+    </section>
+
+    <!-- HIPAA Compliance -->
+    <section class="service-detail" id="hipaa">
+        <div class="service-content">
+            <div class="service-info">
+                <h2>HIPAA Security Rule Compliance</h2>
+                <p class="lead">Healthcare practices, behavioral health, medical billing companies, and anyone who touches Protected Health Information (PHI).</p>
+                
+                <h3>What's Included</h3>
+                <p>We focus exclusively on HIPAA Security Rule compliance — the technical and administrative safeguards that protect patient data. We coordinate with your legal counsel on Privacy Rule matters, but our specialty is keeping your systems secure.</p>
+
+                <ul>
+                    <li><strong>Risk Assessment:</strong> Identify vulnerabilities across systems, devices, vendors</li>
+                    <li><strong>Security Program Build:</strong> Policies, procedures, technical controls, vendor management</li>
+                    <li><strong>Employee Training:</strong> Annual HIPAA security awareness for all staff</li>
+                    <li><strong>Ongoing Management:</strong> Quarterly reviews, annual updates, continuous monitoring</li>
+                </ul>
+
+                <h3>Who This Is For</h3>
+                <ul>
+                    <li>Medical practices (small to large)</li>
+                    <li>Behavioral health clinics</li>
+                    <li>Medical billing companies</li>
+                    <li>Health IT vendors</li>
+                    <li>Any business associate handling PHI</li>
+                </ul>
+
+                <h3>Timeline</h3>
+                <ul>
+                    <li>Assessment: 2-3 weeks</li>
+                    <li>Program Build: 90-120 days</li>
+                    <li>Ongoing: Quarterly check-ins, annual review</li>
+                </ul>
+
+                <a href="get-started.html" class="btn btn-primary">Schedule HIPAA Consultation</a>
+            </div>
+
+            <div class="pricing-box">
+                <h3>HIPAA Pricing</h3>
+                
+                <div class="pricing-tier">
+                    <div class="tier-name">Risk Assessment</div>
+                    <div class="tier-price">Starting at $2,500</div>
+                    <div class="tier-desc">Based on organization size</div>
+                </div>
+
+                <div class="pricing-tier">
+                    <div class="tier-name">Program Build</div>
+                    <div class="tier-price">Starting at $12,000</div>
+                    <div class="tier-desc">Complete security program implementation</div>
+                </div>
+
+                <div class="pricing-tier">
+                    <div class="tier-name">Ongoing Management</div>
+                    <div class="tier-price">Starting at $1,500/mo</div>
+                    <div class="tier-desc">Continuous monitoring and annual updates</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FTC Safeguards Rule -->
+    <section class="service-detail" id="ftc">
+        <div class="service-content">
+            <div class="service-info">
+                <h2>FTC Safeguards Rule Compliance</h2>
+                <p class="lead">Auto dealers, mortgage brokers, credit unions, financial advisors — if you handle customer financial information, the FTC Safeguards Rule applies to you.</p>
+                
+                <h3>What's Included</h3>
+                <p>The FTC Safeguards Rule requires financial institutions to develop, implement, and maintain a comprehensive information security program. We build that program for you.</p>
+
+                <ul>
+                    <li><strong>Risk Assessment:</strong> Required annual assessment of your security posture</li>
+                    <li><strong>Written Security Program:</strong> Policies, procedures, and technical controls</li>
+                    <li><strong>Vendor Management:</strong> Due diligence on all service providers</li>
+                    <li><strong>Incident Response Plan:</strong> Know what to do when something goes wrong</li>
+                    <li><strong>Employee Training:</strong> Security awareness for all staff</li>
+                    <li><strong>Board Reporting:</strong> Annual report to qualified board member or senior officer</li>
+                </ul>
+
+                <h3>Who This Is For</h3>
+                <ul>
+                    <li>Auto dealerships</li>
+                    <li>Mortgage brokers and lenders</li>
+                    <li>Credit unions</li>
+                    <li>Financial advisors</li>
+                    <li>Payday lenders</li>
+                    <li>Anyone subject to Gramm-Leach-Bliley Act</li>
+                </ul>
+
+                <h3>Timeline</h3>
+                <ul>
+                    <li>Assessment: 2-3 weeks</li>
+                    <li>Program Build: 90-120 days</li>
+                    <li>Ongoing: Annual assessment + quarterly reviews</li>
+                </ul>
+
+                <a href="get-started.html" class="btn btn-primary">Schedule FTC Consultation</a>
+            </div>
+
+            <div class="pricing-box">
+                <h3>FTC Safeguards Pricing</h3>
+                
+                <div class="pricing-tier">
+                    <div class="tier-name">Risk Assessment</div>
+                    <div class="tier-price">Starting at $2,500</div>
+                    <div class="tier-desc">Based on number of locations</div>
+                </div>
+
+                <div class="pricing-tier">
+                    <div class="tier-name">Program Build</div>
+                    <div class="tier-price">Starting at $12,000</div>
+                    <div class="tier-desc">Complete FTC-compliant security program</div>
+                </div>
+
+                <div class="pricing-tier">
+                    <div class="tier-name">Ongoing Management</div>
+                    <div class="tier-price">Starting at $2,000/mo</div>
+                    <div class="tier-desc">Annual assessments and continuous compliance</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOC 2 Compliance -->
+    <section class="service-detail" id="soc2">
+        <div class="service-content">
+            <div class="service-info">
+                <h2>SOC 2 Compliance</h2>
+                <p class="lead">SaaS companies, cloud service providers, tech startups — if you're selling to enterprise clients, they're going to ask for your SOC 2 report.</p>
+                
+                <h3>What's Included</h3>
+                <p>SOC 2 is an audit of your security controls performed by a licensed CPA firm. We get you audit-ready, then work with you through the audit process.</p>
+
+                <ul>
+                    <li><strong>Readiness Assessment:</strong> Gap analysis against SOC 2 Trust Service Criteria</li>
+                    <li><strong>Control Implementation:</strong> Build and document all required controls</li>
+                    <li><strong>Policy Development:</strong> Security policies, procedures, evidence collection</li>
+                    <li><strong>Vendor Selection:</strong> Help you choose the right auditor</li>
+                    <li><strong>Audit Support:</strong> Work with auditor through entire process</li>
+                    <li><strong>Ongoing Compliance:</strong> Maintain controls for Type II audits</li>
+                </ul>
+
+                <h3>Who This Is For</h3>
+                <ul>
+                    <li>SaaS companies selling to enterprise</li>
+                    <li>Cloud service providers</li>
+                    <li>Health tech companies</li>
+                    <li>Fintech companies</li>
+                    <li>Any tech company handling sensitive customer data</li>
+                </ul>
+
+                <h3>SOC 2 Type I vs Type II</h3>
+                <ul>
+                    <li><strong>Type I:</strong> Point-in-time audit (faster, cheaper, good for first audit)</li>
+                    <li><strong>Type II:</strong> 6-12 month observation period (required by most enterprises)</li>
+                </ul>
+
+                <h3>Timeline</h3>
+                <ul>
+                    <li>Readiness Assessment: 2-4 weeks</li>
+                    <li>Control Implementation: 90-180 days</li>
+                    <li>Type I Audit: 4-6 weeks</li>
+                    <li>Type II Audit: 6-12 months observation + 4-6 weeks audit</li>
+                </ul>
+
+                <p style="margin-top: 25px; font-size: 15px; color: var(--primary-gray);"><strong>Note:</strong> CPA audit fees ($20,000-$50,000+) are paid directly to the auditor and are not included in our pricing.</p>
+
+                <a href="get-started.html" class="btn btn-primary">Schedule SOC 2 Consultation</a>
+            </div>
+
+            <div class="pricing-box">
+                <h3>SOC 2 Pricing</h3>
+                
+                <div class="pricing-tier">
+                    <div class="tier-name">Readiness Assessment</div>
+                    <div class="tier-price">Starting at $8,000</div>
+                    <div class="tier-desc">Based on company size</div>
+                </div>
+
+                <div class="pricing-tier">
+                    <div class="tier-name">Implementation</div>
+                    <div class="tier-price">Starting at $20,000</div>
+                    <div class="tier-desc">Complete SOC 2 control implementation</div>
+                </div>
+
+                <div class="pricing-tier">
+                    <div class="tier-name">Ongoing Support</div>
+                    <div class="tier-price">Starting at $3,000/mo</div>
+                    <div class="tier-desc">Maintain controls for Type II audit</div>
+                </div>
+
+                <p style="font-size: 13px; color: var(--primary-gray); margin-top: 20px;">* CPA audit fees separate</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2>Not Sure Which Service You Need?</h2>
+            <p>Schedule a free consultation and we'll help you figure out what makes sense for your business.</p>
+            <a href="get-started.html" class="btn btn-cta">Schedule Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <img src="MOR_Cyber_logo_.svg" alt="MOR CYBER" style="height: 65px; width: auto; margin-bottom: 20px;">
+                <p>Cybersecurity and compliance consulting for businesses that can't afford to get it wrong.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#hipaa">HIPAA Compliance</a></li>
+                    <li><a href="#ftc">FTC Safeguards</a></li>
+                    <li><a href="#soc2">SOC 2 Compliance</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="why-morcyber.html">Why MorCyber</a></li>
+                    <li><a href="get-started.html">Get Started</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>Mordecai Zisovitch<br>Director of Information Security</p>
+                <p><a href="tel:908-249-0580">908-249-0580</a></p>
+                <p><a href="mailto:info@morcyber.com">info@morcyber.com</a></p>
+                <p>Toms River, NJ</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 MOR CYBER. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

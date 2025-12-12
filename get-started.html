@@ -4,50 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule Consultation - MOR CYBER</title>
-    <meta http-equiv="refresh" content="0; url=https://api.leadconnectorhq.com/widget/booking/ksTohxYXbGWFsCw7DhUz">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Jura:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
             font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1B1C1E 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .navbar {
+            background: rgba(27, 28, 30, 0.95);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo { height: 50px; }
+        
+        .container {
+            flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1B1C1E 100%);
-            color: white;
-            text-align: center;
-            padding: 20px;
+            padding: 40px 20px;
         }
-        .redirect-message {
+        
+        .content {
             max-width: 600px;
+            text-align: center;
         }
-        .redirect-message h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
+        
+        h1 {
+            font-family: 'Jura', sans-serif;
+            font-size: 48px;
             color: #00AEFF;
+            margin-bottom: 25px;
         }
-        .redirect-message p {
-            font-size: 18px;
-            margin-bottom: 30px;
+        
+        p {
+            font-size: 20px;
             color: #b0b0b0;
+            margin-bottom: 40px;
+            line-height: 1.6;
         }
+        
         .btn {
             display: inline-block;
-            padding: 18px 40px;
+            padding: 22px 50px;
             background: linear-gradient(135deg, #FD6262 0%, #e55555 100%);
             color: white;
             text-decoration: none;
             border-radius: 30px;
             font-weight: 700;
-            font-size: 16px;
+            font-size: 18px;
+            transition: all 0.3s;
+            box-shadow: 0 8px 30px rgba(253,98,98,0.4);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(253,98,98,0.6);
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 36px; }
+            p { font-size: 18px; }
+            .navbar { padding: 15px 20px; }
         }
     </style>
 </head>
 <body>
-    <div class="redirect-message">
-        <h1>Redirecting to Booking Calendar...</h1>
-        <p>You're being redirected to schedule your free consultation.</p>
-        <p>If you're not redirected automatically, click the button below:</p>
-        <a href="https://api.leadconnectorhq.com/widget/booking/ksTohxYXbGWFsCw7DhUz" class="btn">Schedule Now</a>
+    <nav class="navbar">
+        <a href="index.html">
+            <img src="MOR Cyber Logo horizontal.svg" alt="MOR CYBER" class="logo">
+        </a>
+    </nav>
+    
+    <div class="container">
+        <div class="content">
+            <h1>Schedule Your Free Consultation</h1>
+            <p>Ready to discuss your cybersecurity needs? Click below to schedule a 30-minute consultation. No sales pressure, just honest feedback about where you stand.</p>
+            <a href="https://api.leadconnectorhq.com/widget/booking/ksTohxYXbGWFsCw7DhUz" class="btn">Schedule Now</a>
+        </div>
     </div>
 </body>
 </html>

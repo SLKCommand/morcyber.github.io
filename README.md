@@ -10,7 +10,7 @@ Static site for https://morcyber.com, served by GitHub Pages from the `main` bra
 
 ## Booking
 All "Book" / "Schedule" buttons use the HighLevel (LeadConnector) calendar:
-https://api.leadconnectorhq.com/widget/booking/ksTohxYXbGWFsCw7DhUz
+https://outlook.office.com/book/Free30MinHIPAAConsultation@Morcyber.com/
 
 ## Contact form (Formspree) – ACTION NEEDED
 The "Send us a message" form is **hidden** until a real Formspree ID is set; visitors see a mailto link to Mordecai@Morcyber.com instead.

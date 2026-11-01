@@ -116,7 +116,7 @@ document.querySelectorAll('.pain-card, .service-card, .why-card').forEach(el => 
     form.addEventListener('submit', function (e) {
         e.preventDefault();
         fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
-            .then(r => { form.innerHTML = r.ok ? '<p>Thanks! Your message was sent. We\'ll reply within one business day.</p>' : '<p>Sorry, something went wrong. Please email Mordecai@Morcyber.com.</p>'; })
-            .catch(() => { form.innerHTML = '<p>Sorry, something went wrong. Please email Mordecai@Morcyber.com.</p>'; });
+            .then(r => { form.innerHTML = r.ok ? '<p>Thanks! Your message was sent. We\'ll reply within one business day.</p>' : '<p>Sorry, something went wrong. Please email info@morcyber.com.</p>'; })
+            .catch(() => { form.innerHTML = '<p>Sorry, something went wrong. Please email info@morcyber.com.</p>'; });
     });
 })();

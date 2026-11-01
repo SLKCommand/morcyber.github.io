@@ -58,6 +58,16 @@ h2{font-size:40px;margin-bottom:14px}
 .steps li{counter-increment:s;background:#fff;border-radius:14px;padding:24px;border:1px solid #e6e8eb}
 .steps li::before{content:counter(s);display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#00AEFF,#0066cc);color:#fff;font-weight:800;margin-bottom:12px}
 .steps b{display:block;margin-bottom:6px}.steps span{color:#555;font-size:14px}
+.about{background:linear-gradient(135deg,#0a0a0a 0%,#1B1C1E 55%,#000 100%);color:#fff}
+.about .wrap{display:grid;grid-template-columns:300px 1fr;gap:48px;align-items:center}
+.about img{width:100%;border-radius:18px;border:2px solid #00AEFF;box-shadow:0 10px 40px rgba(0,174,255,.25);display:block}
+.about h2{color:#fff;margin-bottom:6px}
+.about .role{color:#00AEFF;font-weight:600;margin-bottom:18px;letter-spacing:.5px}
+.about p{color:#c9c9c9;margin-bottom:18px;max-width:720px}
+.about ul{list-style:none;max-width:720px}
+.about li{padding:6px 0 6px 26px;position:relative;color:#e6e6e6;font-size:15px}
+.about li::before{content:'✓';position:absolute;left:0;color:#00AEFF;font-weight:800}
+@media(max-width:800px){.about .wrap{grid-template-columns:1fr;gap:28px}.about img{max-width:260px}}
 details{background:#fff;border:1px solid #e6e8eb;border-radius:12px;padding:18px 22px;margin-bottom:12px}
 summary{font-weight:700;cursor:pointer}details p{margin-top:10px;color:#555}
 .other .card{border-left:4px solid #7D7D7D}
@@ -169,6 +179,22 @@ footer .copy{border-top:1px solid #222;margin-top:30px;padding-top:20px;text-ali
     <li><b>Analysis</b><span>We identify threats, vulnerabilities, and gaps in your safeguards.</span></li>
     <li><b>Report &amp; roadmap</b><span>Written findings and a prioritized plan, walked through with you.</span></li>
   </ol>
+</div></section>
+
+<section id="about" class="about"><div class="wrap">
+  <img src="headshot.jpg" alt="Motty Zisovitch, founder of MOR Cyber" width="300" height="300" loading="lazy">
+  <div>
+    <h2>Meet your consultant</h2>
+    <div class="role">Motty Zisovitch, Founder, MOR Cyber</div>
+    <p>Motty is a working information security leader with about ten years in IT and cybersecurity. He holds a master's degree in cybersecurity and is currently Director of Information Security at a healthcare organization. He has served as Chief Information Security Officer at a telecom company and a commercial mortgage firm, and has helped a hospital and a health clinic stay secure and meet HIPAA requirements. At MOR Cyber, he gives practices clear, practical HIPAA risk assessments in plain English.</p>
+    <ul>
+      <li>Practicing healthcare security leader, not just an adviser</li>
+      <li>Former Chief Information Security Officer in two regulated industries</li>
+      <li>Master's degree in cybersecurity</li>
+      <li>Hands-on HIPAA security work for a hospital and a health clinic</li>
+      <li>Risk assessments follow the NIST SP 800-30 method, with fixed prices and plain-English reports</li>
+    </ul>
+  </div>
 </div></section>
 
 <section class="alt"><div class="wrap">

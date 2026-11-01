@@ -3,8 +3,8 @@
 Static site for https://morcyber.com, served by GitHub Pages from the `main` branch (root). `CNAME` must stay as `morcyber.com`.
 
 ## Pages
-- `index.html` – HIPAA-focused homepage (offers, pricing, process, FAQ, other services, contact)
-- `services.html` – HIPAA details first, then FTC Safeguards and SOC 2 under "Other services"
+- `index.html` – HIPAA-focused homepage (offers, pricing, process, FAQ, contact)
+- `services.html` – HIPAA services and pricing (site is HIPAA/healthcare only)
 - `why-morcyber.html`, `get-started.html`
 - `site.css` – shared nav / legal note styles; `script.js` – nav, contact form
 

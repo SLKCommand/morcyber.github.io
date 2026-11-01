@@ -1,1062 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOR CYBER - Masters of Risk | Cybersecurity Consulting</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="MOR Cyber Logo horizontal.svg">
-    
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://morcyber.com/">
-    <meta property="og:title" content="MOR CYBER - Masters of Risk | Cybersecurity Consulting">
-    <meta property="og:description" content="Cybersecurity and compliance consulting for healthcare, financial services, and technology companies. HIPAA, FTC Safeguards, SOC 2 compliance.">
-    <meta property="og:image" content="https://morcyber.com/MOR Cyber Logo horizontal.svg">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://morcyber.com/">
-    <meta name="twitter:title" content="MOR CYBER - Cybersecurity Consulting">
-    <meta name="twitter:description" content="Cybersecurity and compliance consulting for healthcare, financial services, and technology companies.">
-    <meta name="twitter:image" content="https://morcyber.com/MOR Cyber Logo horizontal.svg">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Jura:wght@300;400;500;600;700&family=Sofia+Sans+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Jura:wght@300;400;500;600;700&family=Sofia+Sans+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --primary-white: #FFFFFF;
-            --primary-black: #000000;
-            --primary-gray: #7D7D7D;
-            --accent-red: #FD6262;
-            --accent-blue: #00AEFF;
-            --dark-bg: #1B1C1E;
-            
-            --font-title: 'Jura', sans-serif;
-            --font-body: 'Montserrat', sans-serif;
-            --font-tagline: 'Sofia Sans Condensed', sans-serif;
-        }
-        
-        body {
-            font-family: var(--font-body);
-            color: var(--dark-bg);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-title);
-        }
-        
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(27, 28, 30, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 20px 0;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-        }
-        
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo-text {
-            font-size: 32px;
-            font-weight: 900;
-            letter-spacing: 4px;
-            color: var(--primary-white);
-            text-shadow: 0 0 20px rgba(0,174,255,0.5);
-        }
-        
-        .logo-subtitle {
-            font-family: var(--font-tagline);
-            font-size: 10px;
-            letter-spacing: 3px;
-            color: var(--primary-gray);
-            margin-top: -5px;
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 50px;
-            align-items: center;
-        }
-        
-        .nav-menu a {
-            color: var(--primary-white);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            letter-spacing: 0.5px;
-            transition: all 0.3s;
-            position: relative;
-        }
-        
-        .nav-menu a:hover {
-            color: var(--accent-blue);
-        }
-        
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-blue);
-            transition: width 0.3s;
-        }
-        
-        .nav-menu a:hover::after {
-            width: 100%;
-        }
-        
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
-        
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: var(--primary-white);
-            transition: all 0.3s;
-        }
-        
-        .btn-nav {
-            background: linear-gradient(135deg, var(--accent-blue) 0%, #0066cc 100%);
-            padding: 12px 30px !important;
-            border-radius: 30px;
-            box-shadow: 0 4px 15px rgba(0,174,255,0.3);
-        }
-        
-        .btn-nav:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,174,255,0.5);
-        }
-        
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #0a0a0a 0%, var(--dark-bg) 50%, #000 100%);
-            position: relative;
-            display: flex;
-            align-items: center;
-            padding-top: 100px;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                repeating-linear-gradient(90deg, rgba(0,174,255,0.03) 0px, transparent 1px, transparent 40px, rgba(0,174,255,0.03) 41px),
-                repeating-linear-gradient(0deg, rgba(0,174,255,0.03) 0px, transparent 1px, transparent 40px, rgba(0,174,255,0.03) 41px);
-            pointer-events: none;
-        }
-        
-        .hero-grid-text {
-            position: absolute;
-            font-size: 180px;
-            font-weight: 900;
-            color: rgba(255,255,255,0.02);
-            right: -50px;
-            top: 50%;
-            transform: translateY(-50%);
-            letter-spacing: 10px;
-            user-select: none;
-        }
-        
-        .hero-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 40px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-        }
-        
-        .hero-badge {
-            display: inline-block;
-            background: rgba(0,174,255,0.1);
-            border: 1px solid var(--accent-blue);
-            color: var(--accent-blue);
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            margin-bottom: 30px;
-        }
-        
-        .hero h1 {
-            font-size: 72px;
-            font-weight: 900;
-            color: var(--primary-white);
-            line-height: 1.1;
-            margin-bottom: 25px;
-            letter-spacing: -1px;
-        }
-        
-        .hero h1 .highlight {
-            background: linear-gradient(135deg, var(--accent-blue) 0%, #00d4ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .hero-subtitle {
-            font-size: 22px;
-            color: #b0b0b0;
-            margin-bottom: 40px;
-            line-height: 1.6;
-            font-weight: 400;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 60px;
-        }
-        
-        .btn {
-            padding: 18px 40px;
-            font-size: 16px;
-            font-weight: 700;
-            border-radius: 30px;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: inline-block;
-            letter-spacing: 0.5px;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent-red) 0%, #e55555 100%);
-            color: var(--primary-white);
-            box-shadow: 0 6px 25px rgba(253,98,98,0.4);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(253,98,98,0.6);
-        }
-        
-        .btn-secondary {
-            background: rgba(255,255,255,0.05);
-            border: 2px solid var(--accent-blue);
-            color: var(--accent-blue);
-            backdrop-filter: blur(10px);
-        }
-        
-        .btn-secondary:hover {
-            background: var(--accent-blue);
-            color: var(--primary-white);
-        }
-        
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            padding-top: 40px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .stat-number {
-            font-size: 48px;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--accent-blue) 0%, #00d4ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 8px;
-        }
-        
-        .stat-label {
-            font-size: 14px;
-            color: #888;
-            font-weight: 500;
-        }
-        
-        /* Section Styling */
-        .section {
-            padding: 120px 40px;
-        }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-        
-        .section-badge {
-            display: inline-block;
-            background: rgba(0,174,255,0.1);
-            color: var(--accent-blue);
-            padding: 6px 18px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-        
-        .section-header h2 {
-            font-size: 52px;
-            font-weight: 900;
-            color: var(--dark-bg);
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-        }
-        
-        .section-header p {
-            font-size: 20px;
-            color: var(--primary-gray);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        /* Pain Points Section */
-        .pain-section {
-            background: #f8f9fa;
-        }
-        
-        .pain-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        
-        .pain-card {
-            background: var(--primary-white);
-            padding: 40px;
-            border-radius: 16px;
-            border-left: 5px solid var(--accent-blue);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .pain-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, rgba(0,174,255,0.05) 0%, transparent 100%);
-            border-radius: 0 0 0 100px;
-        }
-        
-        .pain-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.12);
-            border-left-color: var(--accent-red);
-        }
-        
-        .pain-icon {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, rgba(0,174,255,0.1) 0%, rgba(0,174,255,0.05) 100%);
-            border-radius: 12px;
-            position: relative;
-        }
-        
-        .pain-icon::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border: 2px solid rgba(0,174,255,0.2);
-            border-radius: 12px;
-            transition: all 0.3s;
-        }
-        
-        .pain-card:hover .pain-icon::before {
-            border-color: var(--accent-blue);
-        }
-        
-        .pain-icon svg {
-            width: 32px;
-            height: 32px;
-            stroke: var(--accent-blue);
-            stroke-width: 2;
-            fill: none;
-        }
-        
-        .pain-card h3 {
-            font-size: 22px;
-            font-weight: 800;
-            color: var(--dark-bg);
-            margin-bottom: 12px;
-        }
-        
-        .pain-card p {
-            font-size: 15px;
-            color: var(--primary-gray);
-            line-height: 1.7;
-        }
-        
-        /* Solution Section */
-        .solution-section {
-            background: var(--primary-white);
-        }
-        
-        .solution-content {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-        
-        .solution-text h2 {
-            font-size: 48px;
-            font-weight: 900;
-            margin-bottom: 25px;
-            letter-spacing: -1px;
-        }
-        
-        .lead {
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--dark-bg);
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-        
-        .check-list {
-            list-style: none;
-            margin: 35px 0;
-        }
-        
-        .check-list li {
-            padding: 16px 0;
-            padding-left: 40px;
-            position: relative;
-            font-size: 17px;
-            color: #444;
-        }
-        
-        .check-list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            top: 16px;
-            width: 28px;
-            height: 28px;
-            background: linear-gradient(135deg, var(--accent-blue) 0%, #0066cc 100%);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            font-size: 14px;
-        }
-        
-        .process-visual {
-            position: relative;
-        }
-        
-        .process-step {
-            background: linear-gradient(135deg, var(--dark-bg) 0%, #000 100%);
-            padding: 35px;
-            border-radius: 16px;
-            margin-bottom: 20px;
-            position: relative;
-            padding-left: 100px;
-            transition: all 0.3s;
-        }
-        
-        .process-step:hover {
-            transform: translateX(10px);
-            box-shadow: 0 8px 30px rgba(0,174,255,0.3);
-        }
-        
-        .step-number {
-            position: absolute;
-            left: 30px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 55px;
-            height: 55px;
-            background: linear-gradient(135deg, var(--accent-blue) 0%, #0066cc 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            font-weight: 900;
-            color: white;
-            box-shadow: 0 4px 15px rgba(0,174,255,0.4);
-        }
-        
-        .process-step h4 {
-            font-size: 22px;
-            color: var(--primary-white);
-            margin-bottom: 8px;
-            font-weight: 800;
-        }
-        
-        .process-step p {
-            color: #999;
-            font-size: 15px;
-        }
-        
-        /* Services Section */
-        .services-section {
-            background: var(--dark-bg);
-            color: var(--primary-white);
-        }
-        
-        .services-section .section-header h2,
-        .services-section .section-badge {
-            color: var(--primary-white);
-        }
-        
-        .services-section .section-header p {
-            color: #b0b0b0;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        
-        .service-card {
-            background: rgba(255,255,255,0.03);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(0,174,255,0.2);
-            padding: 45px 35px;
-            border-radius: 16px;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(0,174,255,0.1) 0%, transparent 70%);
-        }
-        
-        .service-card:hover {
-            border-color: var(--accent-blue);
-            background: rgba(255,255,255,0.05);
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,174,255,0.2);
-        }
-        
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, rgba(0,174,255,0.15) 0%, rgba(0,174,255,0.05) 100%);
-            border-radius: 16px;
-            border: 2px solid rgba(0,174,255,0.3);
-            font-size: 40px;
-            transition: all 0.3s;
-        }
-        
-        .service-card:hover .service-icon {
-            background: linear-gradient(135deg, var(--accent-blue) 0%, #0066cc 100%);
-            border-color: var(--accent-blue);
-            transform: scale(1.1);
-        }
-        
-        .service-card h3 {
-            font-size: 26px;
-            font-weight: 800;
-            color: var(--accent-blue);
-            margin-bottom: 18px;
-        }
-        
-        .service-card p {
-            font-size: 16px;
-            color: #c0c0c0;
-            line-height: 1.7;
-            margin-bottom: 25px;
-        }
-        
-        .service-link {
-            color: var(--accent-blue);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 15px;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .service-link:hover {
-            color: var(--primary-white);
-            gap: 12px;
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--accent-blue) 0%, #0066cc 100%);
-            padding: 100px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0px, transparent 1px, transparent 40px, rgba(255,255,255,0.03) 41px),
-                repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0px, transparent 1px, transparent 40px, rgba(255,255,255,0.03) 41px);
-        }
-        
-        .cta-content {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .cta-section h2 {
-            font-size: 56px;
-            font-weight: 900;
-            color: var(--primary-white);
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-        }
-        
-        .cta-section p {
-            font-size: 22px;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-        
-        .btn-cta {
-            background: var(--accent-red);
-            color: var(--primary-white);
-            padding: 22px 50px;
-            font-size: 18px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-        }
-        
-        .btn-cta:hover {
-            background: #e55555;
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.4);
-        }
-        
-        /* Footer */
-        .footer {
-            background: #0a0a0a;
-            color: var(--primary-white);
-            padding: 80px 40px 30px;
-        }
-        
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 60px;
-            margin-bottom: 50px;
-        }
-        
-        .footer-col h4 {
-            color: var(--accent-blue);
-            margin-bottom: 25px;
-            font-size: 18px;
-            font-weight: 800;
-        }
-        
-        .footer-col ul {
-            list-style: none;
-        }
-        
-        .footer-col ul li {
-            margin-bottom: 12px;
-        }
-        
-        .footer-col a {
-            color: #999;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 15px;
-        }
-        
-        .footer-col a:hover {
-            color: var(--accent-blue);
-        }
-        
-        .footer-col p {
-            color: #888;
-            font-size: 15px;
-            line-height: 1.8;
-        }
-        
-        .footer-logo-text {
-            font-size: 36px;
-            font-weight: 900;
-            letter-spacing: 4px;
-            margin-bottom: 10px;
-        }
-        
-        .footer-tagline {
-            font-family: var(--font-tagline);
-            color: var(--primary-gray);
-            font-size: 12px;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 30px;
-            text-align: center;
-        }
-        
-        .footer-bottom p {
-            color: #666;
-            font-size: 14px;
-        }
-        
-        /* Responsive */
-        @media (max-width: 1200px) {
-            .hero h1 { font-size: 56px; }
-            .section-header h2 { font-size: 42px; }
-            .pain-grid, .services-grid { grid-template-columns: repeat(2, 1fr); }
-            .solution-content { grid-template-columns: 1fr; }
-        }
-        
-        @media (max-width: 768px) {
-            .nav-menu { 
-                display: none;
-                position: absolute;
-                top: 80px;
-                right: 0;
-                background: rgba(27, 28, 30, 0.98);
-                flex-direction: column;
-                width: 100%;
-                text-align: center;
-                gap: 0;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            }
-            .nav-menu.active {
-                display: flex;
-            }
-            .nav-menu li {
-                padding: 20px 0;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-            }
-            .hamburger {
-                display: flex;
-            }
-            .hero h1 { font-size: 42px; }
-            .hero-subtitle { font-size: 18px; }
-            .hero-buttons { flex-direction: column; }
-            .hero-stats { grid-template-columns: 1fr; gap: 30px; }
-            .pain-grid, .services-grid { grid-template-columns: 1fr; }
-            .section { padding: 80px 20px; }
-            .footer-content { grid-template-columns: 1fr; gap: 40px; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOR Cyber | HIPAA Security Risk Assessments for Healthcare Practices</title>
+<meta name="description" content="HIPAA Security Risk Assessments, snapshot reviews, and annual HIPAA security programs for medical, dental, and behavioral health practices. Toms River, NJ.">
+<link rel="icon" type="image/svg+xml" href="MOR Cyber Logo horizontal.svg">
+<meta property="og:type" content="website"><meta property="og:url" content="https://morcyber.com/">
+<meta property="og:title" content="MOR Cyber | HIPAA Security Risk Assessments">
+<meta property="og:description" content="Fixed-price HIPAA Security Risk Assessments and annual security programs for healthcare practices.">
+<meta property="og:image" content="https://morcyber.com/MOR Cyber Logo horizontal.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Jura:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Montserrat',sans-serif;color:#1B1C1E;line-height:1.6}
+h1,h2,h3{font-family:'Jura',sans-serif;line-height:1.15}
+a{color:#0088cc}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+section{padding:90px 0}
+.eyebrow{color:#00AEFF;font-weight:700;letter-spacing:2px;font-size:13px;text-transform:uppercase;margin-bottom:12px}
+h2{font-size:40px;margin-bottom:14px}
+.sub{color:#555;font-size:18px;max-width:760px;margin-bottom:40px}
+.btn{display:inline-block;padding:16px 34px;border-radius:30px;font-weight:700;text-decoration:none;transition:.25s;border:0;cursor:pointer;font-size:16px;font-family:inherit}
+.btn-primary{background:linear-gradient(135deg,#FD6262,#e55555);color:#fff;box-shadow:0 6px 25px rgba(253,98,98,.35)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{border:2px solid #00AEFF;color:#00AEFF;background:transparent}
+.hero{background:linear-gradient(135deg,#0a0a0a 0%,#1B1C1E 50%,#000 100%);color:#fff;padding:170px 0 110px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,rgba(0,174,255,.04) 0,transparent 1px,transparent 40px),repeating-linear-gradient(0deg,rgba(0,174,255,.04) 0,transparent 1px,transparent 40px);pointer-events:none}
+.hero .wrap{position:relative}
+.badge{display:inline-block;border:1px solid #00AEFF;color:#00AEFF;background:rgba(0,174,255,.1);padding:7px 18px;border-radius:20px;font-size:13px;font-weight:600;letter-spacing:1px;margin-bottom:26px}
+.hero h1{font-size:60px;max-width:900px;margin-bottom:22px}
+.hero h1 span{color:#00AEFF}
+.hero p.lead{font-size:20px;color:#b8b8b8;max-width:760px;margin-bottom:36px}
+.hero .ctas{display:flex;gap:16px;flex-wrap:wrap}
+.hero .ref{margin-top:34px;font-size:13px;color:#8a8a8a;max-width:760px}
+.hero .ref a{color:#9fdcff}
+.grid{display:grid;gap:24px}
+.g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}
+.card{background:#fff;border:1px solid #e6e8eb;border-radius:14px;padding:28px;box-shadow:0 4px 18px rgba(0,0,0,.04)}
+.card h3{font-size:21px;margin-bottom:8px}
+.card p{color:#555}
+.alt{background:#f4f6f8}
+.offer{display:flex;flex-direction:column;position:relative}
+.offer .price{font-family:'Jura',sans-serif;font-size:40px;font-weight:700;color:#1B1C1E;margin:10px 0 2px}
+.offer .price small{font-size:18px;color:#777}
+.offer .meta{color:#777;font-size:14px;margin-bottom:18px}
+.offer ul{list-style:none;margin-bottom:26px;flex:1}
+.offer li{padding:7px 0 7px 26px;position:relative;border-bottom:1px solid #f0f0f0;font-size:15px}
+.offer li::before{content:'✓';position:absolute;left:0;color:#00AEFF;font-weight:800}
+.offer .btn{text-align:center}
+.featured{border:2px solid #00AEFF;box-shadow:0 10px 40px rgba(0,174,255,.18)}
+.tag{position:absolute;top:-13px;left:28px;background:#00AEFF;color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:12px;letter-spacing:.5px}
+.steps{counter-reset:s;list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.steps li{counter-increment:s;background:#fff;border-radius:14px;padding:24px;border:1px solid #e6e8eb}
+.steps li::before{content:counter(s);display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#00AEFF,#0066cc);color:#fff;font-weight:800;margin-bottom:12px}
+.steps b{display:block;margin-bottom:6px}.steps span{color:#555;font-size:14px}
+details{background:#fff;border:1px solid #e6e8eb;border-radius:12px;padding:18px 22px;margin-bottom:12px}
+summary{font-weight:700;cursor:pointer}details p{margin-top:10px;color:#555}
+.other .card{border-left:4px solid #7D7D7D}
+.cta-band{background:linear-gradient(135deg,#0a0a0a,#1B1C1E);color:#fff}
+.cta-band h2{color:#fff}.cta-band p{color:#b8b8b8}
+.cta-band a:not(.btn){color:#9fdcff}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+.contact-box{background:rgba(255,255,255,.05);border:1px solid rgba(0,174,255,.35);border-radius:14px;padding:30px}
+.contact-box h3{color:#fff;margin-bottom:10px}
+#contactForm{display:none}
+#contactForm input,#contactForm select,#contactForm textarea{width:100%;padding:12px 14px;margin-bottom:12px;border-radius:8px;border:1px solid #444;background:#111;color:#fff;font:inherit}
+#contactForm textarea{min-height:100px}
+footer{background:#0a0a0a;color:#999;padding:50px 0 30px;font-size:15px}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+footer h4{color:#00AEFF;margin-bottom:12px}footer a{color:#bbb;text-decoration:none}footer ul{list-style:none}footer li{margin-bottom:8px}
+footer .copy{border-top:1px solid #222;margin-top:30px;padding-top:20px;text-align:center;color:#666;font-size:14px}
+@media(max-width:1000px){.g4{grid-template-columns:repeat(2,1fr)}.g3,.steps{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.hero{padding:130px 0 70px}.hero h1{font-size:38px}h2{font-size:30px}section{padding:60px 0}.g4,.g2{grid-template-columns:1fr}footer .cols{grid-template-columns:1fr}.hero .ctas .btn{width:100%;text-align:center}}
+</style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" style="text-decoration: none;">
-                <img src="MOR Cyber Logo horizontal.svg" alt="MOR CYBER - Masters of Risk" style="height: 50px; width: auto;">
-            </a>
-            
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="why-morcyber.html">Why MorCyber</a></li>
-                <li><a href="get-started.html" class="btn-nav">Get Started</a></li>
-            </ul>
-        </div>
-    </nav>
+<nav class="mc-nav"><div class="mc-nav-in">
+  <a href="index.html"><img src="MOR Cyber Logo horizontal.svg" alt="MOR CYBER - Masters of Risk"></a>
+  <button class="mc-burger" aria-label="Menu" onclick="this.nextElementSibling.classList.toggle('open')"><span></span><span></span><span></span></button>
+  <ul class="mc-menu"><li><a href="index.html" class="active">Home</a></li><li><a href="services.html">HIPAA Services</a></li><li><a href="index.html#pricing">Pricing</a></li><li><a href="why-morcyber.html">Why MOR Cyber</a></li><li><a href="index.html#contact">Contact</a></li><li><a class="mc-cta" href="https://api.leadconnectorhq.com/widget/booking/ksTohxYXbGWFsCw7DhUz" target="_blank" rel="noopener">Book Free Consultation</a></li></ul>
+</div></nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-grid-text">CYBER</div>
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 6px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                    CYBERSECURITY & COMPLIANCE CONSULTING
-                </div>
-                <h1>Stop Worrying About<br><span class="highlight">What Could Go Wrong</span></h1>
-                <p class="hero-subtitle">We help businesses figure out where they're exposed to cyberattacks — and fix it before something bad happens.</p>
-                
-                <div class="hero-buttons">
-                    <a href="https://api.leadconnectorhq.com/widget/booking/ksTohxYXbGWFsCw7DhUz" class="btn btn-primary" target="_blank">Schedule Free Consultation</a>
-                    <a href="services.html" class="btn btn-secondary">See What We Do</a>
-                </div>
-                
-                <div class="hero-stats">
-                    <div>
-                        <div class="stat-number">$4.45M</div>
-                        <div class="stat-label">Average cost of data breach</div>
-                    </div>
-                    <div>
-                        <div class="stat-number">287 days</div>
-                        <div class="stat-label">Average time to identify breach</div>
-                    </div>
-                    <div>
-                        <div class="stat-number">60%</div>
-                        <div class="stat-label">Small businesses fold within 6 months of breach</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="hero"><div class="wrap">
+  <div class="badge">HIPAA SECURITY RISK ASSESSMENTS</div>
+  <h1>Know where your practice stands on <span>HIPAA security</span> &mdash; and what to fix first.</h1>
+  <p class="lead">MOR Cyber helps medical, dental, and behavioral health practices complete the security risk analysis HIPAA requires, find the gaps in their safeguards, and get a clear, prioritized plan to close them. Fixed prices, plain English.</p>
+  <div class="ctas">
+    <a class="btn btn-primary" href="https://api.leadconnectorhq.com/widget/booking/ksTohxYXbGWFsCw7DhUz" target="_blank" rel="noopener">Book a Free 30-Minute Consultation</a>
+    <a class="btn btn-ghost" href="#pricing">See Pricing</a>
+  </div>
+  <p class="ref">The HIPAA Security Rule requires covered entities and business associates to conduct an accurate and thorough risk analysis (<a href="https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-C/section-164.308" target="_blank" rel="noopener">45 CFR &sect;164.308(a)(1)(ii)(A)</a>). See HHS <a href="https://www.hhs.gov/hipaa/for-professionals/security/guidance/guidance-risk-analysis/index.html" target="_blank" rel="noopener">Guidance on Risk Analysis</a>.</p>
+</div></section>
 
-    <!-- Pain Points Section -->
-    <section class="section pain-section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-badge">COMMON CHALLENGES</div>
-                <h2>Does Any of This Sound Familiar?</h2>
-                <p>These are the situations we help businesses solve every day</p>
-            </div>
-            
-            <div class="pain-grid">
-                <div class="pain-card">
-                    <div class="pain-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                    </div>
-                    <h3>Suspicious Emails</h3>
-                    <p>Your team clicks on phishing emails and you're not sure what to do</p>
-                </div>
-                
-                <div class="pain-card">
-                    <div class="pain-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                    </div>
-                    <h3>Access Confusion</h3>
-                    <p>You don't know who has access to what systems anymore</p>
-                </div>
-                
-                <div class="pain-card">
-                    <div class="pain-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                    </div>
-                    <h3>Compliance Pressure</h3>
-                    <p>Client or insurance asking about security and you're scrambling</p>
-                </div>
-                
-                <div class="pain-card">
-                    <div class="pain-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
-                    </div>
-                    <h3>Cloud Exposure</h3>
-                    <p>Using cloud tools but haven't reviewed vendor security</p>
-                </div>
-                
-                <div class="pain-card">
-                    <div class="pain-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                    </div>
-                    <h3>No Response Plan</h3>
-                    <p>Don't have a plan for responding to breach or incident</p>
-                </div>
-                
-                <div class="pain-card">
-                    <div class="pain-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                    </div>
-                    <h3>Outgrown Security</h3>
-                    <p>You've grown but your security hasn't kept up</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section><div class="wrap">
+  <p class="eyebrow">Who we work with</p>
+  <h2>Built for healthcare practices that handle patient data</h2>
+  <p class="sub">If your organization creates, stores, or sends electronic protected health information (ePHI), the Security Rule applies to you.</p>
+  <div class="grid g4">
+    <div class="card"><h3>Medical practices</h3><p>Primary care, specialty, and multi-provider clinics.</p></div>
+    <div class="card"><h3>Dental &amp; orthodontic</h3><p>Single and multi-location offices.</p></div>
+    <div class="card"><h3>Behavioral health</h3><p>Therapy groups, counseling, and telehealth providers.</p></div>
+    <div class="card"><h3>Business associates</h3><p>Medical billing companies, IT providers, and vendors handling PHI.</p></div>
+  </div>
+</div></section>
 
-    <!-- Solution Section -->
-    <section class="section solution-section">
-        <div class="container">
-            <div class="solution-content">
-                <div class="solution-text">
-                    <div class="section-badge">OUR APPROACH</div>
-                    <h2>How We Actually Help</h2>
-                    <p class="lead">We assess your real risk by understanding your business, systems, and exposure. Then we show you where you're vulnerable, what it would cost if you got hit, and how to fix it without breaking your bank.</p>
-                    <p>Think of it as a security check-up — practical, affordable, designed to protect what you've built.</p>
-                    <ul class="check-list">
-                        <li>No generic checklists — we learn your business first</li>
-                        <li>Clear prioritization — fix the big risks first</li>
-                        <li>Honest pricing — know what it costs upfront</li>
-                        <li>Ongoing support — we don't disappear after the assessment</li>
-                    </ul>
-                    <a href="why-morcyber.html" class="btn btn-primary">Why Choose MorCyber</a>
-                </div>
-                
-                <div class="process-visual">
-                    <div class="process-step">
-                        <div class="step-number">1</div>
-                        <h4>Assessment</h4>
-                        <p>Find where hackers could get in</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">2</div>
-                        <h4>Program Build</h4>
-                        <p>Lock down access and encrypt data</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">3</div>
-                        <h4>Ongoing Protection</h4>
-                        <p>Monitor and adapt as threats evolve</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="pricing" class="alt"><div class="wrap">
+  <p class="eyebrow">Services &amp; pricing</p>
+  <h2>Three ways to get your HIPAA security in order</h2>
+  <p class="sub">Fixed prices and clear deliverables. Final scope and price are confirmed in a written proposal after your free consultation.</p>
+  <div class="grid g3">
+    <div class="card offer">
+      <h3>HIPAA Snapshot</h3>
+      <div class="price">$500&ndash;$1,000</div>
+      <div class="meta">Based on practice size</div>
+      <ul>
+        <li>Review of your existing HIPAA security policies and paperwork</li>
+        <li>Staff security questionnaire and check-up</li>
+        <li>Summary of top risks and quick wins</li>
+        <li>Results call to walk through findings</li>
+      </ul>
+      <a class="btn btn-ghost" href="https://api.leadconnectorhq.com/widget/booking/ksTohxYXbGWFsCw7DhUz" target="_blank" rel="noopener">Start with a Snapshot</a>
+    </div>
+    <div class="card offer featured">
+      <span class="tag">MOST COMPLETE ASSESSMENT</span>
+      <h3>Full HIPAA Security Risk Assessment</h3>
+      <div class="price">$4,500</div>
+      <div class="meta">Single-location practice &middot; larger practices quoted after consultation</div>
+      <ul>
+        <li>Risk analysis aligned to the HIPAA Security Rule and HHS guidance</li>
+        <li>Inventory of systems and where ePHI lives</li>
+        <li>Administrative, physical, and technical safeguard gap analysis</li>
+        <li>Risk register with likelihood and impact ratings</li>
+        <li>Prioritized remediation plan</li>
+        <li>Written report and leadership briefing</li>
+      </ul>
+      <a class="btn btn-primary" href="https://api.leadconnectorhq.com/widget/booking/ksTohxYXbGWFsCw7DhUz" target="_blank" rel="noopener">Book a Consultation</a>
+    </div>
+    <div class="card offer">
+      <h3>Annual HIPAA Security Program</h3>
+      <div class="price">$12,000<small>/yr</small></div>
+      <div class="meta">Includes the Full Risk Assessment</div>
+      <ul>
+        <li>Full HIPAA Security Risk Assessment</li>
+        <li>Security policy and procedure updates</li>
+        <li>Annual staff security awareness training</li>
+        <li>Quarterly check-ins and remediation tracking</li>
+        <li>Vendor and Business Associate Agreement review support</li>
+        <li>Guidance when a security incident happens</li>
+      </ul>
+      <a class="btn btn-ghost" href="https://api.leadconnectorhq.com/widget/booking/ksTohxYXbGWFsCw7DhUz" target="_blank" rel="noopener">Talk About the Program</a>
+    </div>
+  </div>
+</div></section>
 
-    <!-- Services Section -->
-    <section class="section services-section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-badge">WHAT WE DO</div>
-                <h2>What We Specialize In</h2>
-                <p>Cybersecurity and compliance for businesses that can't afford to get it wrong</p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
-                    </div>
-                    <h3>HIPAA Compliance</h3>
-                    <p>Healthcare practices, behavioral health, medical billing — we handle Security Rule compliance so you can focus on patient care.</p>
-                    <a href="services.html#hipaa" class="service-link">Learn More →</a>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
-                    </div>
-                    <h3>FTC Safeguards Rule</h3>
-                    <p>Auto dealers, mortgage brokers, financial services — meet FTC requirements without the overwhelm.</p>
-                    <a href="services.html#ftc" class="service-link">Learn More →</a>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
-                    </div>
-                    <h3>SOC 2 Compliance</h3>
-                    <p>SaaS companies, tech startups — get audit-ready and win enterprise deals with SOC 2 Type I or II.</p>
-                    <a href="services.html#soc2" class="service-link">Learn More →</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="process"><div class="wrap">
+  <p class="eyebrow">How it works</p>
+  <h2>From first call to a clear plan</h2>
+  <p class="sub">No generic checklists. We learn how your practice actually works first.</p>
+  <ol class="steps">
+    <li><b>Free consultation</b><span>30 minutes to understand your practice and recommend the right option.</span></li>
+    <li><b>Proposal</b><span>A written, fixed-price proposal with scope and deliverables.</span></li>
+    <li><b>Discovery</b><span>Document request, staff questionnaire, and interviews (remote or on-site).</span></li>
+    <li><b>Analysis</b><span>We identify threats, vulnerabilities, and gaps in your safeguards.</span></li>
+    <li><b>Report &amp; roadmap</b><span>Written findings and a prioritized plan, walked through with you.</span></li>
+  </ol>
+</div></section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2>Ready to Know Where You Stand?</h2>
-            <p>Schedule a free 30-minute consultation. We'll give you honest feedback about your risks — no sales pressure, just clarity.</p>
-            <a href="https://api.leadconnectorhq.com/widget/booking/ksTohxYXbGWFsCw7DhUz" class="btn btn-cta" target="_blank">Schedule Your Free Consultation</a>
-        </div>
-    </section>
+<section class="alt"><div class="wrap">
+  <p class="eyebrow">FAQ</p>
+  <h2>Common questions</h2>
+  <details><summary>Is a risk analysis actually required?</summary><p>Yes. The HIPAA Security Rule requires covered entities and business associates to conduct an accurate and thorough assessment of the risks to ePHI and to implement measures that reduce them. See <a href="https://www.hhs.gov/hipaa/for-professionals/security/guidance/guidance-risk-analysis/index.html" target="_blank" rel="noopener">HHS guidance</a>.</p></details>
+  <details><summary>How often should we do one?</summary><p>HIPAA does not set a fixed interval; HHS describes risk analysis as an ongoing process. Many practices review annually and after major changes such as a new EHR, a new location, or a security incident.</p></details>
+  <details><summary>Should we start with the Snapshot or the Full Assessment?</summary><p>The Snapshot is a fast, low-cost look at your paperwork and staff practices. The Full Assessment is the thorough risk analysis the Security Rule calls for. We&rsquo;ll recommend one on your free consultation.</p></details>
+  <details><summary>Will you certify us as HIPAA compliant?</summary><p>No. There is no official government HIPAA certification, and no consultant can guarantee compliance. We give you a documented assessment and a clear plan to reduce risk.</p></details>
+  <details><summary>Do you need access to patient records?</summary><p>We assess systems, policies, and safeguards, not patient charts. If an engagement may involve access to PHI, we&rsquo;ll put a Business Associate Agreement in place first.</p></details>
+</div></section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-col">
-                <img src="MOR_Cyber_logo_.svg" alt="MOR CYBER" style="height: 65px; width: auto; margin-bottom: 20px;">
-                <p>Cybersecurity and compliance consulting for businesses that can't afford to get it wrong.</p>
-            </div>
-            
-            <div class="footer-col">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="services.html#hipaa">HIPAA Compliance</a></li>
-                    <li><a href="services.html#ftc">FTC Safeguards</a></li>
-                    <li><a href="services.html#soc2">SOC 2 Compliance</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-col">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="why-morcyber.html">Why MorCyber</a></li>
-                    <li><a href="get-started.html">Get Started</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <p><a href="mailto:info@morcyber.com">info@morcyber.com</a></p>
-                <p><a href="tel:908-249-0580">908-249-0580</a></p>
-                <p>Toms River, NJ</p>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>            <p>&copy; 2024 MOR CYBER. All rights reserved.</p>
-        </div>
-    </footer>
+<section class="other"><div class="wrap">
+  <p class="eyebrow">Other services</p>
+  <h2>Outside healthcare?</h2>
+  <p class="sub">HIPAA is our focus, but we also help businesses with these frameworks.</p>
+  <div class="grid g2">
+    <div class="card"><h3>FTC Safeguards Rule</h3><p>For auto dealers, mortgage brokers, and other financial services businesses covered by the Gramm-Leach-Bliley Act. <a href="services.html#ftc">Learn more &rarr;</a></p></div>
+    <div class="card"><h3>SOC 2 Readiness</h3><p>For SaaS and technology companies preparing for a SOC 2 audit by a licensed CPA firm. <a href="services.html#soc2">Learn more &rarr;</a></p></div>
+  </div>
+</div></section>
 
-    <script src="script.js"></script>
+<section id="contact" class="cta-band"><div class="wrap contact-grid">
+  <div>
+    <p class="eyebrow">Get started</p>
+    <h2>Book your free 30-minute consultation</h2>
+    <p style="margin:14px 0 28px">Pick a time that works for you. We&rsquo;ll talk through your practice, answer your questions, and recommend the right next step &mdash; no pressure.</p>
+    <a class="btn btn-primary" href="https://api.leadconnectorhq.com/widget/booking/ksTohxYXbGWFsCw7DhUz" target="_blank" rel="noopener">Choose a Time</a>
+    <p style="margin-top:22px;font-size:15px">Or call <a href="tel:908-249-0580">908-249-0580</a></p>
+  </div>
+  <div class="contact-box">
+    <h3>Send us a message</h3>
+    <p id="mailtoFallback">Not ready to book? Email us at <a href="mailto:Mordecai@Morcyber.com?subject=HIPAA%20inquiry%20from%20morcyber.com">Mordecai@Morcyber.com</a> and we&rsquo;ll reply within one business day.</p>
+    <!-- FORMSPREE: replace YOUR_FORMSPREE_ID with the ID from formspree.io (see README). The form stays hidden until then. -->
+    <form id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+      <input name="name" placeholder="Full name" required>
+      <input name="email" type="email" placeholder="Work email" required>
+      <input name="practice" placeholder="Practice / organization name">
+      <select name="practice_type"><option value="">Practice type</option><option>Medical</option><option>Dental</option><option>Behavioral health</option><option>Business associate / vendor</option><option>Other</option></select>
+      <textarea name="message" placeholder="How can we help? (Please don&rsquo;t include patient information.)" required></textarea>
+      <input type="hidden" name="_subject" value="New inquiry from morcyber.com">
+      <button class="btn btn-primary" type="submit">Send Message</button>
+    </form>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><img src="MOR Cyber Logo horizontal.svg" alt="MOR CYBER" style="height:44px"><p style="margin-top:14px">HIPAA security risk assessments and security programs for healthcare practices.</p></div>
+    <div><h4>Services</h4><ul><li><a href="services.html#hipaa">HIPAA Security</a></li><li><a href="index.html#pricing">Pricing</a></li><li><a href="services.html#ftc">FTC Safeguards</a></li><li><a href="services.html#soc2">SOC 2</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="mailto:Mordecai@Morcyber.com">Mordecai@Morcyber.com</a></li><li><a href="tel:908-249-0580">908-249-0580</a></li><li>Toms River, NJ</li></ul></div>
+  </div>
+  <p class="mc-legal">This website provides general information about HIPAA security and is not legal advice. MOR Cyber does not certify organizations as &ldquo;HIPAA compliant&rdquo; and no assessment can guarantee compliance or prevent every incident. Consult your attorney for legal questions.</p>
+  <div class="copy">&copy; 2026 MOR Cyber LLC. All rights reserved.</div>
+</div></footer>
+<script src="script.js"></script>
 </body>
 </html>

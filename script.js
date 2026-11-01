@@ -105,3 +105,18 @@ document.querySelectorAll('.pain-card, .service-card, .why-card').forEach(el => 
     el.style.transition = 'opacity 0.5s, transform 0.5s';
     observer.observe(el);
 });
+// Contact form: only shown once a real Formspree ID is configured (see README).
+(function () {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+    if (form.action.indexOf('YOUR_FORMSPREE_ID') !== -1) return; // placeholder -> keep hidden, mailto fallback shows
+    form.style.display = 'block';
+    const fallback = document.getElementById('mailtoFallback');
+    if (fallback) fallback.textContent = "Not ready to book? Send us a note and we'll reply within one business day.";
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+            .then(r => { form.innerHTML = r.ok ? '<p>Thanks! Your message was sent. We\'ll reply within one business day.</p>' : '<p>Sorry, something went wrong. Please email Mordecai@Morcyber.com.</p>'; })
+            .catch(() => { form.innerHTML = '<p>Sorry, something went wrong. Please email Mordecai@Morcyber.com.</p>'; });
+    });
+})();

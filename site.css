@@ -1,0 +1,13 @@
+/* Shared MOR Cyber styles (nav, footer note, contact form) - used on every page */
+:root{--mc-blue:#00AEFF;--mc-red:#FD6262;--mc-dark:#1B1C1E;--mc-gray:#7D7D7D}
+.mc-nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(27,28,30,.96);backdrop-filter:blur(10px);box-shadow:0 2px 20px rgba(0,0,0,.2)}
+.mc-nav-in{max-width:1300px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.mc-nav img{height:46px;width:auto;display:block}
+.mc-menu{display:flex;gap:30px;list-style:none;align-items:center;margin:0;padding:0}
+.mc-menu a{color:#fff;text-decoration:none;font:600 15px 'Montserrat',sans-serif}
+.mc-menu a:hover,.mc-menu a.active{color:var(--mc-blue)}
+.mc-menu a.mc-cta{background:linear-gradient(135deg,var(--mc-red),#e55555);padding:11px 22px;border-radius:30px;color:#fff}
+.mc-burger{display:none;background:none;border:0;cursor:pointer;padding:6px}
+.mc-burger span{display:block;width:26px;height:3px;background:#fff;margin:5px 0}
+@media(max-width:900px){.mc-burger{display:block}.mc-menu{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:#1B1C1E;padding:20px 0;gap:18px}.mc-menu.open{display:flex}}
+.mc-legal{max-width:1100px;margin:18px auto 0;padding:0 20px;color:#888;font-size:13px;line-height:1.6;text-align:center;font-family:'Montserrat',sans-serif}
